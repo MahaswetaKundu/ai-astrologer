@@ -42,7 +42,7 @@ The app generates zodiac-based profiles and provides daily outlooks with AI-powe
 
 &nbsp;  git clone https://github.com/MahaswetaKundu/ai-astrologer.git
 
-&nbsp;  cd ai-astrologer-streamlit
+&nbsp;  cd ai-astrologer
 
 
 
@@ -78,7 +78,7 @@ Project Structure:
 
 
 
-ai-astrologer-streamlit/
+ai-astrologer/
 
 │
 
