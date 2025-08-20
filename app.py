@@ -5,7 +5,8 @@
 import hashlib
 import random
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, date
+
 from typing import Dict, List
 
 import streamlit as st
@@ -13,6 +14,8 @@ import streamlit as st
 # ----------------------------
 # Astrology logic (rule-based)
 # ----------------------------
+min_date = date(1800, 1, 1)   # start limit
+max_date = date(2200, 12, 31)
 
 ZODIAC_RANGES = [
     ("Capricorn", (12, 22), (1, 19)),
@@ -175,7 +178,9 @@ st.caption("Educational demo • Rule-based reading (no real ephemeris).")
 
 with st.form("birth_form"):
     name = st.text_input("Name", placeholder="Your full name")
-    date = st.date_input("Date of Birth")
+    
+    date = st.date_input("Date of Birth", min_value=min_date,
+    max_value=max_date)
     time = st.time_input("Time of Birth")
     place = st.text_input("Place of Birth", placeholder="City, Country")
     submitted = st.form_submit_button("Generate Reading")
